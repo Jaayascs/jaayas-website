@@ -6,10 +6,11 @@ import { MissionVision } from "@/components/site/MissionVision";
 import { Services } from "@/components/site/Services";
 import { Approach } from "@/components/site/Approach";
 import { Technologies } from "@/components/site/Technologies";
-import { WhyJaayas } from "@/components/site/WhyJaayas";
+import { FeaturedCapabilities } from "@/components/site/FeaturedCapabilities";
 import { CTA } from "@/components/site/CTA";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { Showcase } from "@/components/site/showcase";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,12 +37,13 @@ function Index() {
     <main className="relative min-h-screen bg-background text-foreground">
       <Navbar />
       <Hero />
+      <Showcase />
       <About />
       <MissionVision />
       <Services />
       <Approach />
       <Technologies />
-      <WhyJaayas />
+      <FeaturedCapabilities />
       <CTA />
       <Contact />
       <Footer />

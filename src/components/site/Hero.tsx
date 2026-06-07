@@ -15,14 +15,14 @@ export function Hero() {
         aria-hidden
         animate={{ x: [0, 40, 0], y: [0, -30, 0] }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -left-32 top-1/4 -z-10 h-[420px] w-[420px] rounded-full opacity-40 blur-3xl"
+        className="absolute -left-32 top-1/4 -z-10 h-105 w-105 rounded-full opacity-40 blur-3xl"
         style={{ background: "radial-gradient(circle, var(--lavender), transparent 60%)" }}
       />
       <motion.div
         aria-hidden
         animate={{ x: [0, -30, 0], y: [0, 40, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -right-32 top-1/3 -z-10 h-[480px] w-[480px] rounded-full opacity-25 blur-3xl"
+        className="absolute -right-32 top-1/3 -z-10 h-120 w-120 rounded-full opacity-25 blur-3xl"
         style={{ background: "radial-gradient(circle, var(--gold), transparent 60%)" }}
       />
 
@@ -33,8 +33,8 @@ export function Hero() {
           aria-hidden
           className="absolute h-1 w-1 rounded-full"
           style={{
-            top: `${(i * 53) % 90 + 5}%`,
-            left: `${(i * 71) % 90 + 5}%`,
+            top: `${((i * 53) % 90) + 5}%`,
+            left: `${((i * 71) % 90) + 5}%`,
             background: i % 3 === 0 ? "var(--gold)" : "var(--lavender)",
             opacity: 0.5,
           }}
@@ -71,7 +71,7 @@ export function Hero() {
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href="#services"
-              className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:translate-y-[-2px]"
+              className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-primary-foreground shadow-(--shadow-glow) transition-all hover:-translate-y-0.5"
               style={{
                 background:
                   "linear-gradient(135deg, var(--primary), color-mix(in oklab, var(--lavender) 55%, var(--primary)))",
@@ -82,7 +82,7 @@ export function Hero() {
             </a>
             <a
               href="#contact"
-              className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-[var(--lavender)]"
+              className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-lavender"
             >
               Contact Us
             </a>

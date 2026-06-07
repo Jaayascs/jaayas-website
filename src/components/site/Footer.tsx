@@ -46,19 +46,11 @@ export function Footer() {
               <li key={s}>{s}</li>
             ))}
           </ul>
-          <h4 className="mt-6 font-display text-base">Contact</h4>
-          <a
-            href="mailto:info@jaayas.com"
-            className="mt-3 inline-block text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            info@jaayas.com
-          </a>
         </div>
       </div>
 
       <div className="mx-auto mt-14 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-border/60 px-6 pt-6 text-xs text-muted-foreground sm:flex-row">
         <p>© 2026 Jaayas Consultancy Services</p>
-        <p>Inspired by Possibility.</p>
       </div>
     </footer>
   );

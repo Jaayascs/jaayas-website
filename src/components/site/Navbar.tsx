@@ -34,7 +34,7 @@ export function Navbar() {
     >
       <div
         className={`mt-3 flex w-full max-w-7xl items-center justify-between rounded-2xl transition-all duration-500 ${
-          scrolled ? "glass-strong px-5 py-2.5 shadow-[var(--shadow-elegant)]" : "px-6 py-4"
+          scrolled ? "glass-strong px-5 py-2.5 shadow-(--shadow-elegant)" : "px-6 py-4"
         }`}
       >
         <Logo />
@@ -47,7 +47,7 @@ export function Navbar() {
               className="group relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {l.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--lavender)] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-lavender transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
@@ -56,13 +56,13 @@ export function Navbar() {
           <button
             onClick={toggle}
             aria-label="Toggle theme"
-            className="grid h-9 w-9 place-items-center rounded-full border border-border/60 text-foreground transition-all hover:border-[var(--lavender)] hover:text-[var(--lavender)]"
+            className="grid h-9 w-9 place-items-center rounded-full border border-border/60 text-foreground transition-all hover:border-lavender hover:text-lavender"
           >
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
           <a
             href="#contact"
-            className="hidden rounded-full px-4 py-2 text-sm font-medium text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:translate-y-[-1px] sm:inline-flex"
+            className="hidden rounded-full px-4 py-2 text-sm font-medium text-primary-foreground shadow-(--shadow-glow) transition-all hover:-translate-y-px sm:inline-flex"
             style={{
               background:
                 "linear-gradient(135deg, var(--primary), color-mix(in oklab, var(--lavender) 55%, var(--primary)))",

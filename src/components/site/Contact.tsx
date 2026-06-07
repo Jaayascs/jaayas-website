@@ -1,26 +1,53 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send, CheckCircle2 } from "lucide-react";
+import { Send, CheckCircle2 } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
+import emailjs from "@emailjs/browser";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
     const next: Record<string, string> = {};
+
     if (!String(data.get("name") ?? "").trim()) next.name = "Please enter your name.";
+
     const email = String(data.get("email") ?? "").trim();
     if (!email) next.email = "Please enter your email.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "Enter a valid email.";
-    if (!String(data.get("message") ?? "").trim()) next.message = "Tell us a bit about your project.";
+
+    if (!String(data.get("message") ?? "").trim())
+      next.message = "Tell us a bit about your project.";
+
     setErrors(next);
+
     if (Object.keys(next).length === 0) {
-      setSent(true);
-      (e.target as HTMLFormElement).reset();
-      setTimeout(() => setSent(false), 5000);
+      try {
+        await emailjs.send(
+          "service_i8gkd3h",
+          "template_ftfqruh",
+          {
+            name: data.get("name"),
+            email: data.get("email"),
+            company: data.get("company") || "Not provided",
+            phone: data.get("phone") || "Not provided",
+            message: data.get("message"),
+          },
+          "L9yG6ZSBER3DzSjzq",
+        );
+
+        setSent(true);
+        form.reset();
+        setTimeout(() => setSent(false), 5000);
+      } catch (error) {
+        console.error("EmailJS Error:", error);
+        alert("Unable to send your message at the moment. Please try again.");
+      }
     }
   };
 
@@ -28,34 +55,45 @@ export function Contact() {
     "w-full rounded-xl border border-border/70 bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-[var(--lavender)] focus:ring-2 focus:ring-[color-mix(in_oklab,var(--lavender)_30%,transparent)]";
 
   return (
-    <section id="contact" className="relative py-28 sm:py-36">
+    <section id="contact" className="relative overflow-hidden py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionHeader
               align="left"
               eyebrow="Contact"
-              title={<>Let's build what's <span className="italic" style={{ color: "var(--lavender)" }}>possible</span>.</>}
-              subtitle="Share a few details and we'll get back to you to explore how we can help."
+              title={
+                <>
+                  Let's build what's{" "}
+                  <span className="italic" style={{ color: "var(--lavender)" }}>
+                    possible
+                  </span>
+                  .
+                </>
+              }
+              subtitle="Share a few details about your goals, challenges, or ideas, and we'll reach out to continue the conversation."
             />
-            <a
-              href="mailto:info@jaayas.com"
-              className="glass mt-10 inline-flex items-center gap-3 rounded-2xl px-5 py-4 transition-all hover:border-[var(--lavender)]"
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative mt-10 overflow-hidden rounded-4xl border border-white/10"
             >
-              <span
-                className="grid h-10 w-10 place-items-center rounded-lg"
+              <img
+                src="images/contact.jpg"
+                alt="Technology consultation discussion"
+                className="h-65 w-full object-cover"
+              />
+
+              <div
+                className="absolute inset-0"
                 style={{
-                  background: "color-mix(in oklab, var(--lavender) 18%, transparent)",
-                  border: "1px solid color-mix(in oklab, var(--lavender) 35%, transparent)",
+                  background: "linear-gradient(to top, rgba(2,8,23,0.55), transparent 60%)",
                 }}
-              >
-                <Mail className="h-4 w-4" style={{ color: "var(--lavender)" }} />
-              </span>
-              <span>
-                <span className="block text-xs uppercase tracking-wider text-muted-foreground">Email</span>
-                <span className="block text-sm font-medium">info@jaayas.com</span>
-              </span>
-            </a>
+              />
+            </motion.div>
           </div>
 
           <motion.form
@@ -75,6 +113,7 @@ export function Contact() {
                 <input name="name" type="text" className={field} placeholder="Jane Doe" />
                 {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
               </div>
+
               <div>
                 <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
                   Email
@@ -82,30 +121,43 @@ export function Contact() {
                 <input name="email" type="email" className={field} placeholder="you@company.com" />
                 {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
               </div>
+
               <div>
                 <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                  Company
+                  Company <span className="normal-case opacity-70">(Optional)</span>
                 </label>
-                <input name="company" type="text" className={field} placeholder="Company name" />
+                <input
+                  name="company"
+                  type="text"
+                  className={field}
+                  placeholder="Company name (optional)"
+                />
               </div>
+
               <div>
                 <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                  Phone
+                  Phone <span className="normal-case opacity-70">(Optional)</span>
                 </label>
                 <input name="phone" type="tel" className={field} placeholder="+1 555 000 0000" />
               </div>
             </div>
+
             <div className="mt-4">
               <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 Message
               </label>
-              <textarea name="message" rows={5} className={field} placeholder="Tell us about your idea or challenge…" />
+              <textarea
+                name="message"
+                rows={5}
+                className={field}
+                placeholder="Tell us about your idea or challenge..."
+              />
               {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
             </div>
 
             <button
               type="submit"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:translate-y-[-1px] sm:w-auto"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-(--shadow-glow) transition-all hover:-translate-y-px sm:w-auto"
               style={{
                 background:
                   "linear-gradient(135deg, var(--primary), color-mix(in oklab, var(--lavender) 55%, var(--primary)))",
@@ -113,17 +165,20 @@ export function Contact() {
             >
               {sent ? (
                 <>
-                  <CheckCircle2 className="h-4 w-4" /> Message ready to send
+                  <CheckCircle2 className="h-4 w-4" />
+                  Message sent successfully
                 </>
               ) : (
                 <>
-                  Send Message <Send className="h-4 w-4" />
+                  Send Message
+                  <Send className="h-4 w-4" />
                 </>
               )}
             </button>
+
             {sent && (
               <p className="mt-3 text-xs text-muted-foreground">
-                Thanks — please email us at info@jaayas.com to continue the conversation.
+                Thank you for reaching out. We'll review your message and get back to you soon.
               </p>
             )}
           </motion.form>

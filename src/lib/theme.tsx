@@ -10,7 +10,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
-    const saved = (typeof window !== "undefined" && localStorage.getItem("jaayas-theme")) as Theme | null;
+    const saved = (typeof window !== "undefined" &&
+      localStorage.getItem("jaayas-theme")) as Theme | null;
     const initial: Theme = saved ?? "dark";
     setTheme(initial);
     document.documentElement.classList.toggle("dark", initial === "dark");

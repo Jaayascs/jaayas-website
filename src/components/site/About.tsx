@@ -11,7 +11,10 @@ export function About() {
             eyebrow="About Jaayas"
             title={
               <>
-                Inspired by <span className="italic" style={{ color: "var(--lavender)" }}>Possibility</span>
+                Inspired by{" "}
+                <span className="italic" style={{ color: "var(--lavender)" }}>
+                  Possibility
+                </span>
               </>
             }
           />
@@ -28,8 +31,8 @@ export function About() {
               innovation.
             </p>
             <p>
-              We partner with organizations to simplify processes, solve business problems, and build
-              technology solutions that create meaningful impact.
+              We partner with organizations to simplify processes, solve business problems, and
+              build technology solutions that create meaningful impact.
             </p>
             <p>
               Our focus is on delivering practical, scalable, and future-ready solutions that help
@@ -38,7 +41,8 @@ export function About() {
             <div className="flex items-center gap-3 pt-2">
               <span className="h-px w-12" style={{ background: "var(--gold)" }} />
               <span className="font-display text-lg italic" style={{ color: "var(--foreground)" }}>
-                Technology should make work easier, businesses stronger, and possibilities limitless.
+                Technology should make work easier, businesses stronger, and possibilities
+                limitless.
               </span>
             </div>
           </motion.div>

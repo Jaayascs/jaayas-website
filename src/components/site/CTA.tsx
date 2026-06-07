@@ -29,7 +29,10 @@ export function CTA() {
 
           <h2 className="font-display text-4xl font-medium leading-tight sm:text-5xl md:text-6xl">
             Ready to Turn Ideas <br className="hidden sm:block" />
-            Into <span className="italic" style={{ color: "var(--lavender)" }}>Solutions?</span>
+            Into{" "}
+            <span className="italic" style={{ color: "var(--lavender)" }}>
+              Solutions?
+            </span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
             Let's discuss how technology can help move your business forward.
