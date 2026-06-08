@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 

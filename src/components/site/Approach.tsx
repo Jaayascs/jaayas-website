@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { motion } from "framer-motion";
 import { Search, Brain, Compass, Code2, Rocket, Handshake } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";

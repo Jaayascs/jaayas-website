@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Send, CheckCircle2 } from "lucide-react";
