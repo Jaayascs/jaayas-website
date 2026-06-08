@@ -10,7 +10,7 @@ export function MissionVision() {
         className="absolute inset-x-0 top-1/2 -z-10 h-72 -translate-y-1/2 opacity-40 blur-3xl"
         style={{
           background:
-            "radial-gradient(ellipse at center, color-mix(in oklab, var(--lavender) 35%, transparent), transparent 70%)",
+            "radial-gradient(circle, color-mix(in oklab, var(--brand-accent) 60%, var(--iceblue)), transparent 70%)",
         }}
       />
 
@@ -34,17 +34,17 @@ export function MissionVision() {
             <div
               aria-hidden
               className="absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-60"
-              style={{ background: "var(--lavender)" }}
+              style={{ background: "var(--iceblue)" }}
             />
 
             <div
               className="inline-flex h-12 w-12 items-center justify-center rounded-xl"
               style={{
-                background: "color-mix(in oklab, var(--lavender) 18%, transparent)",
-                border: "1px solid color-mix(in oklab, var(--lavender) 35%, transparent)",
+                background: "color-mix(in oklab, var(--iceblue) 18%, transparent)",
+                border: "1px solid color-mix(in oklab, var(--iceblue) 35%, transparent)",
               }}
             >
-              <Compass className="h-5 w-5" style={{ color: "var(--lavender)" }} />
+              <Compass className="h-5 w-5" style={{ color: "var(--brand-accent)" }} />
             </div>
 
             <p
@@ -86,22 +86,22 @@ export function MissionVision() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             whileHover={{ y: -6 }}
-            className="glass group relative overflow-hidden rounded-3xl p-8 sm:p-10"
+            className="glass-tech group relative overflow-hidden rounded-3xl p-8 sm:p-10"
           >
             <div
               aria-hidden
               className="absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-60"
-              style={{ background: "var(--lavender)" }}
+              style={{ background: "var(--iceblue)" }}
             />
 
             <div
               className="inline-flex h-12 w-12 items-center justify-center rounded-xl"
               style={{
-                background: "color-mix(in oklab, var(--lavender) 18%, transparent)",
-                border: "1px solid color-mix(in oklab, var(--lavender) 35%, transparent)",
+                background: "color-mix(in oklab, var(--iceblue) 18%, transparent)",
+                border: "1px solid color-mix(in oklab, var(--iceblue) 35%, transparent)",
               }}
             >
-              <Target className="h-5 w-5" style={{ color: "var(--lavender)" }} />
+              <Target className="h-5 w-5" style={{ color: "var(--brand-accent)" }} />
             </div>
 
             <p

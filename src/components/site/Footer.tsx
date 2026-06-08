@@ -9,7 +9,7 @@ export function Footer() {
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
             Technology should make work easier, businesses stronger, and possibilities limitless.
           </p>
-          <p className="mt-4 font-display text-base italic" style={{ color: "var(--lavender)" }}>
+          <p className="mt-4 font-display text-base italic" style={{ color: "var(--iceblue)" }}>
             Inspired by Possibility.
           </p>
         </div>

@@ -34,7 +34,7 @@ export function Navbar() {
     >
       <div
         className={`mt-3 flex w-full max-w-7xl items-center justify-between rounded-2xl transition-all duration-500 ${
-          scrolled ? "glass-strong px-5 py-2.5 shadow-(--shadow-elegant)" : "px-6 py-4"
+          scrolled ? "glass-tech px-5 py-2.5 shadow-(--shadow-elegant)" : "px-6 py-4"
         }`}
       >
         <Logo />
@@ -44,10 +44,13 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="group relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="group relative text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-iceblue"
             >
               {l.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-lavender transition-all duration-300 group-hover:w-full" />
+              <span
+                className="absolute -bottom-1 left-0 h-px w-0 transition-all duration-300 group-hover:w-full"
+                style={{ backgroundColor: "var(--iceblue)" }}
+              />
             </a>
           ))}
         </nav>
@@ -56,22 +59,24 @@ export function Navbar() {
           <button
             onClick={toggle}
             aria-label="Toggle theme"
-            className="grid h-9 w-9 place-items-center rounded-full border border-border/60 text-foreground transition-all hover:border-lavender hover:text-lavender"
+            className="glass-tech grid h-9 w-9 place-items-center rounded-full border border-border/60 text-foreground transition-all duration-300 hover:border-iceblue hover:text-iceblue"
           >
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
+
           <a
             href="#contact"
-            className="hidden rounded-full px-4 py-2 text-sm font-medium text-primary-foreground shadow-(--shadow-glow) transition-all hover:-translate-y-px sm:inline-flex"
+            className="glass-tech hidden rounded-full px-4 py-2 text-sm font-semibold text-background shadow-(--shadow-glow) transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg sm:inline-flex"
             style={{
               background:
-                "linear-gradient(135deg, var(--primary), color-mix(in oklab, var(--lavender) 55%, var(--primary)))",
+                "linear-gradient(135deg, var(--primary), color-mix(in oklab, var(--interactive-color) 55%, var(--brand-accent)))",
             }}
           >
             Get Started
           </a>
+
           <button
-            className="grid h-9 w-9 place-items-center rounded-full border border-border/60 lg:hidden"
+            className="glass-tech grid h-9 w-9 place-items-center rounded-full border border-border/60 transition-all duration-300 hover:border-iceblue hover:text-iceblue lg:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
           >
@@ -92,7 +97,7 @@ export function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+                className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--iceblue)_12%,transparent)] hover:text-iceblue"
               >
                 {l.label}
               </a>

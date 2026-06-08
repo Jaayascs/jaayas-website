@@ -40,7 +40,7 @@ export function FeaturedCapabilities() {
       <div
         className="absolute left-1/2 top-1/2 -z-10 h-130 w-130 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl opacity-20"
         style={{
-          background: "radial-gradient(circle, var(--lavender), transparent 70%)",
+          background: "radial-gradient(circle, var(--brand-accent), transparent 70%)",
         }}
       />
 
@@ -65,8 +65,8 @@ export function FeaturedCapabilities() {
                 transition={{ duration: 0.45, delay: index * 0.06 }}
                 className={`group flex w-full items-center justify-between rounded-2xl border px-5 py-4 text-left transition-all ${
                   active === index
-                    ? "border-lavender bg-[color-mix(in_oklab,var(--lavender)_14%,transparent)]"
-                    : "border-border/60 bg-transparent hover:border-lavender"
+                    ? "border-brand-accent bg-[color-mix(in_oklab,var(--brand-accent)_14%,transparent)]"
+                    : "border-border/60 bg-transparent hover:border-iceblue"
                 }`}
               >
                 <span className="font-display text-xl font-medium">{item.title}</span>
@@ -84,7 +84,7 @@ export function FeaturedCapabilities() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35 }}
-            className="glass-strong flex min-h-90 flex-col justify-between rounded-4xl p-8 sm:p-10"
+            className="glass-tech flex min-h-90 flex-col justify-between rounded-4xl p-8 sm:p-10"
           >
             <div>
               <p
@@ -98,7 +98,7 @@ export function FeaturedCapabilities() {
                 {current.title}
               </h3>
 
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="glass-techmt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                 {current.description}
               </p>
             </div>

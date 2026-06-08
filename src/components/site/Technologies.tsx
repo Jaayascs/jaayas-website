@@ -46,7 +46,7 @@ const technologies = [
   {
     name: "APIs",
     icon: Workflow,
-    color: "var(--lavender)",
+    color: "var(--iceblue)",
   },
   {
     name: "Cloud Platforms",
@@ -56,7 +56,7 @@ const technologies = [
   {
     name: "Databases",
     icon: Database,
-    color: "var(--lavender)",
+    color: "var(--iceblue)",
   },
   {
     name: "Automation Tools",
@@ -72,7 +72,7 @@ export function Technologies() {
       <div
         className="absolute left-1/2 top-1/2 -z-10 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl opacity-20"
         style={{
-          background: "radial-gradient(circle, var(--lavender), transparent 70%)",
+          background: "radial-gradient(circle, var(--iceblue), transparent 70%)",
         }}
       />
 
@@ -107,7 +107,7 @@ export function Technologies() {
                   <div
                     className="flex h-12 w-12 items-center justify-center rounded-xl"
                     style={{
-                      background: "color-mix(in oklab, var(--lavender) 12%, transparent)",
+                      background: "color-mix(in oklab, var(--brand-accent) 12%, transparent)",
                     }}
                   >
                     <Icon

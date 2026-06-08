@@ -54,26 +54,30 @@ export function Services() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
               whileHover={{ y: -6 }}
-              className="glass group relative overflow-hidden rounded-2xl p-7 transition-shadow duration-500 hover:shadow-[var(--shadow-elegant)]"
+              className="glass-tech group relative overflow-hidden rounded-2xl p-7 transition-shadow duration-500 hover:shadow-(--shadow-elegant)"
             >
               <div
                 aria-hidden
                 className="absolute inset-x-0 -top-px h-px opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
                   background:
-                    "linear-gradient(90deg, transparent, var(--lavender), var(--gold), transparent)",
+                    "linear-gradient(90deg, transparent, var(--iceblue), var(--gold), transparent)",
                 }}
               />
+
               <div
-                className="inline-flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+                className="btn-ice-glass inline-flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
                 style={{
-                  background: "color-mix(in oklab, var(--lavender) 14%, transparent)",
-                  border: "1px solid color-mix(in oklab, var(--lavender) 30%, transparent)",
+                  background:
+                    "linear-gradient(135deg, color-mix(in oklab, var(--iceblue) 12%, transparent), color-mix(in oklab, var(--lavender) 12%, transparent))",
+                  border: "1px solid color-mix(in oklab, var(--iceblue) 30%, transparent)",
                 }}
               >
-                <s.icon className="h-5 w-5" style={{ color: "var(--lavender)" }} />
+                <s.icon className="h-5 w-5" style={{ color: "var(--brand-accent)" }} />
               </div>
+
               <h3 className="mt-5 font-display text-2xl font-medium">{s.title}</h3>
+
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
             </motion.article>
           ))}

@@ -57,7 +57,7 @@ export function Approach() {
                 height: i % 3 === 0 ? "6px" : "4px",
                 top: `${10 + ((i * 17) % 70)}%`,
                 left: `${5 + ((i * 13) % 90)}%`,
-                background: i % 2 === 0 ? "var(--lavender)" : "var(--gold)",
+                background: i % 2 === 0 ? "var(--iceblue)" : "var(--gold)",
                 opacity: 0.8,
               }}
               animate={{
@@ -88,7 +88,7 @@ export function Approach() {
             }}
             className="absolute left-[5%] top-0 -z-10 h-40 w-40 rounded-full blur-3xl opacity-20"
             style={{
-              background: "radial-gradient(circle, var(--lavender), transparent 70%)",
+              background: "radial-gradient(circle, var(--iceblue), transparent 70%)",
             }}
           />
 
@@ -124,7 +124,7 @@ export function Approach() {
             }}
             className="absolute right-[5%] top-0 -z-10 h-40 w-40 rounded-full blur-3xl opacity-20"
             style={{
-              background: "radial-gradient(circle, var(--lavender), transparent 70%)",
+              background: "radial-gradient(circle, var(--iceblue), transparent 70%)",
             }}
           />
 
@@ -134,7 +134,7 @@ export function Approach() {
             className="absolute left-0 right-0 top-8 hidden h-px md:block"
             style={{
               background:
-                "linear-gradient(90deg, transparent, color-mix(in oklab, var(--lavender) 60%, transparent), color-mix(in oklab, var(--gold) 60%, transparent), transparent)",
+                "linear-gradient(90deg, transparent, color-mix(in oklab, var(--iceblue) 60%, transparent), color-mix(in oklab, var(--gold) 60%, transparent), transparent)",
             }}
           />
 
@@ -160,11 +160,12 @@ export function Approach() {
                   <div
                     className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full glass-strong transition-all duration-300"
                     style={{
-                      border: "1px solid color-mix(in oklab, var(--lavender) 30%, transparent)",
-                      boxShadow: "0 0 30px color-mix(in oklab, var(--lavender) 20%, transparent)",
+                      border:
+                        "1px solid color-mix(in oklab, var(--interactive-color) 30%, transparent)",
+                      boxShadow: "0 0 30px color-mix(in oklab, var(--iceblue) 20%, transparent)",
                     }}
                   >
-                    <Icon className="h-7 w-7" style={{ color: "var(--lavender)" }} />
+                    <Icon className="h-7 w-7" style={{ color: "var(--brand-accent)" }} />
                   </div>
 
                   <h3 className="mt-5 font-display text-xl font-medium">{step.title}</h3>

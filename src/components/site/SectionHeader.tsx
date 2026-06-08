@@ -24,14 +24,22 @@ export function SectionHeader({
       {eyebrow && (
         <span
           className="inline-block text-[11px] font-semibold uppercase tracking-[0.25em]"
-          style={{ color: "var(--lavender)" }}
+          style={{ color: "var(--brand-accent)" }}
         >
           {eyebrow}
         </span>
       )}
-      <h2 className="mt-3 font-display text-4xl font-medium leading-tight sm:text-5xl">{title}</h2>
+      <h2
+        className="mt-3 font-display text-4xl font-medium leading-tight sm:text-5xl"
+        style={{ color: "var(--interactive-color)" }}
+      >
+        {title}
+      </h2>
       {subtitle && (
-        <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p
+          className="mt-5 text-base leading-relaxed text-foreground sm:text-lg"
+          style={{ color: "var(--foreground)" }}
+        >
           {subtitle}
         </p>
       )}

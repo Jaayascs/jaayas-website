@@ -12,7 +12,7 @@ export function About() {
             title={
               <>
                 Inspired by{" "}
-                <span className="italic" style={{ color: "var(--lavender)" }}>
+                <span className="italic" style={{ color: "var(--brand-accent)" }}>
                   Possibility
                 </span>
               </>
@@ -30,16 +30,20 @@ export function About() {
               At Jaayas Consultancy Services, we believe every challenge presents an opportunity for
               innovation.
             </p>
+
             <p>
               We partner with organizations to simplify processes, solve business problems, and
               build technology solutions that create meaningful impact.
             </p>
+
             <p>
               Our focus is on delivering practical, scalable, and future-ready solutions that help
               businesses move forward with confidence.
             </p>
+
             <div className="flex items-center gap-3 pt-2">
               <span className="h-px w-12" style={{ background: "var(--gold)" }} />
+
               <span className="font-display text-lg italic" style={{ color: "var(--foreground)" }}>
                 Technology should make work easier, businesses stronger, and possibilities
                 limitless.

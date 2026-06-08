@@ -52,7 +52,7 @@ export function Contact() {
   };
 
   const field =
-    "w-full rounded-xl border border-border/70 bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-[var(--lavender)] focus:ring-2 focus:ring-[color-mix(in_oklab,var(--lavender)_30%,transparent)]";
+    "w-full rounded-xl border border-border/70 bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-[var(--brand-accent)] focus:ring-2 focus:ring-[color-mix(in_oklab,var(--brand-accent)_30%,transparent)]";
 
   return (
     <section id="contact" className="relative overflow-hidden py-28 sm:py-36">
@@ -65,7 +65,7 @@ export function Contact() {
               title={
                 <>
                   Let's build what's{" "}
-                  <span className="italic" style={{ color: "var(--lavender)" }}>
+                  <span className="italic" style={{ color: "var(--brand-accent)" }}>
                     possible
                   </span>
                   .
@@ -157,10 +157,10 @@ export function Contact() {
 
             <button
               type="submit"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-(--shadow-glow) transition-all hover:-translate-y-px sm:w-auto"
+              className="glass-tech mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-(--shadow-glow) transition-all hover:-translate-y-px sm:w-auto"
               style={{
                 background:
-                  "linear-gradient(135deg, var(--primary), color-mix(in oklab, var(--lavender) 55%, var(--primary)))",
+                  " linear-gradient(135deg, var(--primary), color-mix(in oklab, var(--brand-accent) 55%, var(--primary)))",
               }}
             >
               {sent ? (
