@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { motion } from "framer-motion";
 import { Code2, Globe, Lightbulb, Workflow, Rocket, LineChart } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";

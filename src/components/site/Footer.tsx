@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Logo } from "./Logo";
 
 export function Footer() {
